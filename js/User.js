@@ -28,10 +28,11 @@ class User {
 			session.startSession();
 
 
-
-
 			window.location.href = 'hexa.html';
 		})
 
 	}
+	
+
+
 }
