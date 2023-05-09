@@ -15,7 +15,7 @@ class Session{
 
 	for(let i = 0; i < ca.lenght; i++){
 		let c = ca[i];
-		while (c.chartAt(0) == ' ') {
+		while (c.charAt(0) == ' ') {
 			c = c.substring(1);
 		}
 		if(c.indexOf(name) == 0) {
