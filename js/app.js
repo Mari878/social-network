@@ -1,4 +1,4 @@
-let session = new Session();
+
 session = session.getSession();
 
 
