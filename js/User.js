@@ -57,7 +57,7 @@ class User {
 			});
 
 			if(login_successful === 0){
-				alert('pogresan email ili lozinka')
+				alert('Pogresan email ili lozinka.')
 			}
 
 		});
