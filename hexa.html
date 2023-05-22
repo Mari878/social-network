@@ -4,16 +4,73 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="#">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Drustvena mreza</title>
 </head>
 <body>
-	<h1>Dobrodoslii</h1>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="inner-container left-side">
+					<img src="img/profile.jpg" class="profile">
+
+					<p><b id="username"></b></p>
+					<p id="email"></p>
+
+					<button id="editAccount">Izmeni nalog</button>
+					<button id="logout">Odjavi se</button>
+				</div>
+			</div>
+
+			<div class="col-md-9">
+				<div class="inner-container right-side">
+					<form id="postForm">
+					<textarea id="postContent" placeholder="O cemu razmisljas danas? "></textarea>	
+					<button>Objavi</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		
+	</div>
 
 
+<!-- ovo je modal za izmeni/brisanje profila -->
 
+<div class="custom-modal">
+			<button id="closeModal">X</button>
 
+			<form id="editForm">
+				<h2>Izmeni profil</h2>
+
+				<div>
+					<label for="korisnicko_ime">Korisnicko ime: </label>
+					<input id="korisnicko_ime" type="text" name="korisnicko_ime" placeholder="niko.nikolic">
+				</div>
+
+				<div>
+					<label for="edit_email">Email adresa: </label>
+					<input id="edit_email" type="text" name="register_email" placeholder="niko.nikolic@gmail.com">
+				</div>
+
+				
+				<div>
+					<button>Izmeni</button>
+				</div>
+
+			</form>
+			<hr>
+
+			<button id="delateProfile">OBRISI PROFIL</button>
+
+		</div>
 
 <script src="js/Session.js"></script>
+<script src="js/User.js"></script>
 <script src="js/hexa.js"></script>
 
 </body>

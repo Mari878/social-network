@@ -33,6 +33,42 @@ class User {
 
 	}
 
+	async get(user_id) {
+		let api_url = this.api_url + '/users/' + user_id;
+
+		let response = await fetch(api_url);
+		let data = await response.json();
+		return data;
+
+		
+	} 
+
+edit() {
+	let data = {
+		username: this.username,
+		email: this.email
+	};
+
+	data = JSON.stringify(data);
+
+	let session = new Session();
+	session_id = session.getSession();
+
+
+	fetch(this.api_url + '/users/' + session_id, {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: data
+	})
+	.then(response => response.json())
+	.then(data => {
+		window.location.href = 'hexa.html'
+	});
+
+}
+
 
 	// ovo je za login
 
