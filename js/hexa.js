@@ -53,7 +53,16 @@ document.querySelector('#editForm').addEventListener('submit', e => {
 });
 
 
+document.querySelector('#deleteProfile').addEventListener('click', e => {
+	e.preventDefault();
 
+	let text = 'Da li ste sigurni da zelite da obrisete profil?';
+	if(confirm(text) === true) {
+		let user = new User();
+		user.delete();
+	}
+
+});
 
 
 

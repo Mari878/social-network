@@ -159,7 +159,11 @@ width: 100%;
 	border: 0;
 }
 
-
+#deleteProfile {
+	border: 2px solid darkred;
+	color: darkred;
+	padding: 5px 15px;
+}
 
 
 
