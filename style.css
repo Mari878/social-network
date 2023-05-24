@@ -167,14 +167,38 @@ width: 100%;
 
 
 
+/*ovo je za objave na profilu*/
+#allPostsWrapper .single-post {
+	background-color: #eaeaea;
+	padding: 15px;
+	margin-top: 15px;
+	color: #000;
+}
+
+#allPostsWrapper .single-post .post-content {
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+	margin-bottom: 10px;
+	font-size: 22px;
+}
 
 
 
+/*oov je za polje komentara*/
+#allPostsWrapper .single-post .post-commments form {
+	height: 30px;
+	margin-top: 15px;
+}
 
+#allPostsWrapper .single-post .post-commments form input {
+	width: 85%;
+	padding: 0 10px;
+}
 
-
-
-
+#allPostsWrapper .single-post .post-commments form button {
+	width: 15%;
+	background-color: grey;
+}
 
 
 

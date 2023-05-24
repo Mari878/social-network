@@ -65,6 +65,87 @@ document.querySelector('#deleteProfile').addEventListener('click', e => {
 });
 
 
+document.querySelector('#postForm').addEventListener('submit', e => {
+	e.preventDefault();
+
+	async function createPost() {
+		let content = document.querySelector('#postContent').value;
+		document.querySelector('#postContent').value = '';
+		let post = new Post();
+		post.post_content = content;
+		post = await post.create();
+
+		let current_user = new User();
+		current_user = await current_user.get(session_id);
+
+		let delete_post_html = '';
+
+		if(session_id === post.user_id) {
+			delete_post_html = '<button class="remove-btn" onclick="removeMyPost(this)">Remove</button>'
+		}
+
+
+
+		document.querySelector('#allPostsWrapper').innerHTML = `<div class="single-post" data-post_id="${post.id}">
+																	<div class="post-content">${post.content}</div>
+
+
+																	<div class="post-actions">
+																		<p><b>Autor:</b> ${current_user.username}</p>
+																		<div>
+																			<button onclick="likePost(this)" calss="likePostJS like-btn"><span>${post.likes}</span> Likes</button>
+																			<button class="comment-btn" onclick="commentPost(this)">Comments</button>
+																			${delete_post_html}
+																		</div>
+																	</div>
+
+
+
+																	<div class="post-commments">
+																	<form>
+																		<input placeholder="Napisi komentar..." type="text">
+																		<button onclick="commentPostSubmit(event)">Comment</button>
+																	</form>
+																</div>
+																</div>
+																`;
+	}
+
+	createPost();
+});
+
+async function getAllPosts() {
+	let all_posts = new Post();
+	all_posts = await all_posts.getAllPosts();
+
+	console.log(all_posts)
+}
+
+getAllPosts();s
+
+const commentPostSubmit = event => {
+
+}
+
+const removeMyPost = el => {
+
+}
+
+const likePost = el => {
+
+
+}
+
+
+const commentPost = el =>{
+
+
+}
+
+
+
+
+
 
 
 
