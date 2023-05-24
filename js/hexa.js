@@ -118,13 +118,21 @@ async function getAllPosts() {
 	let all_posts = new Post();
 	all_posts = await all_posts.getAllPosts();
 
-	console.log(all_posts)
+
+	
+
+	all_posts.forEach(post =>{
+		let html = document.querySelector('#allPostsWrapper').innerHTML;
+		
+		document.querySelector('#allPostsWrapper').innerHTML = `<div clas="single-post">${post.content}</div>` + html;
+
+	});
 }
 
-getAllPosts();s
+getAllPosts();
 
 const commentPostSubmit = event => {
-
+	
 }
 
 const removeMyPost = el => {
