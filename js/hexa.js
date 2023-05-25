@@ -78,6 +78,8 @@ document.querySelector('#postForm').addEventListener('submit', e => {
 		let current_user = new User();
 		current_user = await current_user.get(session_id);
 
+		let html = document.querySelector('#allPostsWrapper').innerHTML;
+
 		let delete_post_html = '';
 
 		if(session_id === post.user_id) {
@@ -108,7 +110,7 @@ document.querySelector('#postForm').addEventListener('submit', e => {
 																	</form>
 																</div>
 																</div>
-																`;
+																` + html;
 	}
 
 	createPost();
@@ -121,11 +123,49 @@ async function getAllPosts() {
 
 	
 
-	all_posts.forEach(post =>{
-		let html = document.querySelector('#allPostsWrapper').innerHTML;
-		
-		document.querySelector('#allPostsWrapper').innerHTML = `<div clas="single-post">${post.content}</div>` + html;
+	
 
+		all_posts.forEach(post => {
+			async function getPostUser() {
+
+				let user = new User();
+				user = await user.get(post.user_id);
+
+		
+
+				let html = document.querySelector('#allPostsWrapper').innerHTML;
+
+				let delete_post_html = '';
+
+				if(session_id === post.user_id) {
+					delete_post_html = '<button class="remove-btn" onclick="removeMyPost(this)">Remove</button>'
+				}
+				
+				document.querySelector('#allPostsWrapper').innerHTML = `<div class="single-post" data-post_id="${post.id}">
+																	<div class="post-content">${post.content}</div>
+
+
+																	<div class="post-actions">
+																		<p><b>Autor:</b> ${user.username}</p>
+																		<div>
+																			<button onclick="likePost(this)" calss="likePostJS like-btn"><span>${post.likes}</span> Likes</button>
+																			<button class="comment-btn" onclick="commentPost(this)">Comments</button>
+																			${delete_post_html}
+																		</div>
+																	</div>
+
+
+
+																	<div class="post-commments">
+																	<form>
+																		<input placeholder="Napisi komentar..." type="text">
+																		<button onclick="commentPostSubmit(event)">Comment</button>
+																	</form>
+																</div>
+																</div>
+																` + html;
+			}
+			getPostUser();
 	});
 }
 
@@ -145,7 +185,7 @@ const likePost = el => {
 }
 
 
-const commentPost = el =>{
+const commentPost = el => {
 
 
 }

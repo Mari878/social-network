@@ -141,7 +141,7 @@ width: 100%;
 
 
 /*desni deo stranice*/
-.inner-container.right-side form{
+.inner-container.right-side form {
 	display: flex;
 	height: 100px;
 }
@@ -168,12 +168,15 @@ width: 100%;
 
 
 /*ovo je za objave na profilu*/
+
 #allPostsWrapper .single-post {
 	background-color: #eaeaea;
 	padding: 15px;
 	margin-top: 15px;
 	color: #000;
 }
+
+
 
 #allPostsWrapper .single-post .post-content {
 	padding-bottom: 10px;
@@ -184,7 +187,38 @@ width: 100%;
 
 
 
+
+
 /*oov je za polje komentara*/
+
+#allPostsWrapper .single-post .post-actions {
+	display: flex;
+	justify-content: space-between;
+	color: grey;
+}
+
+#allPostsWrapper .single-post .post-actions div button.like-btn {
+	background-image: url('img/like.png');
+	padding: 5px 15px 5px 40px;
+	background-repeat: no-repeat;
+	background-position: 10px;
+	border: 0;
+}
+
+#allPostsWrapper .single-post .post-actions div button.comment-btn {
+	background-image: url('img/comment.png');
+	padding: 5px 15px 5px 40px;
+	background-repeat: no-repeat;
+	background-position: 10px;
+	border: 0;
+}
+
+#allPostsWrapper .single-post .post-actions div button.remove-btn {
+	border-color: darkred;
+	color: darkred;
+	padding: 5px 15px;
+}
+
 #allPostsWrapper .single-post .post-commments form {
 	height: 30px;
 	margin-top: 15px;
