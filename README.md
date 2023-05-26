@@ -1,2 +1,2 @@
 # social-network
-Ovo ce biti moja prva breza sa login sistemom
+Nesto nalik drustvenoj mrezi, login sistem, meso gde je moguce ostavljati objaev u vidu teksta, kao i lajkovati/komentarisati iste.
