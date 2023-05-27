@@ -234,7 +234,9 @@ width: 100%;
 	background-color: grey;
 }
 
-
+#allPostsWrapper .single-post .post-commments {
+	display: none;
+}
 
 
 
