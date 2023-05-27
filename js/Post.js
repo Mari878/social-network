@@ -50,7 +50,7 @@ class Post {
 			body: data
 		})
 		.then(response => response.json())
-		.then(data => {alert('post lajkovan')});
+		.then(data => {});
 
 	}
 
@@ -59,6 +59,6 @@ class Post {
 			method: 'DELETE'
 		})
 		.then(response => response.json())
-		.then(data => {alert('post obrisan')});
+		.then(data => {});
 	}
 }
