@@ -397,6 +397,10 @@ const removeMyPosts = (btn) => {
   let post_id = btn.closest(".single-post").getAttribute("data-post_id");
 
   btn.closest(".single-post").remove();
+
+
+  let post = new Post();
+  post.delete(post_id);
 };
 
 const likePost = (btn) => {
@@ -406,6 +410,9 @@ const likePost = (btn) => {
 
   btn.querySelector("span").innerText = number_of_likes + 1;
   btn.setAttribute("disabled", "true");
+
+  let post = new Post();
+  post.like(post_id, number_of_likes + 1);
 };
 
 const commentPost = (btn) => {
@@ -413,4 +420,5 @@ const commentPost = (btn) => {
   let post_id = main_post_el.getAttribute("data-post_id");
 
   main_post_el.querySelector(".post-comments").style.display = "block";
+
 };
